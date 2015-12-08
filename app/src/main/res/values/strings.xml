@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EasyTrade</string>
+    <string name="title_activity_list_produto">Lista de Produtos</string>
+    <string name="title_activity_cadastro_cliente">Cadastro Cliente</string>
+    <string name="nome">Nome</string>
+    <string name="digite_seu_nome">Digite seu nome</string>
+    <string name="email">Email</string>
+    <string name="digite_seu_email">Digite seu Email</string>
+    <string name="telefone">Telefone</string>
+    <string name="digite_seu_telefone">Digite seu Telefone</string>
+    <string name="ok">Ok</string>
+    <string name="title_activity_list_cliente">list_cliente</string>
+    <string name="title_activity_item_list_cliente">item_list_cliente</string>
+</resources>

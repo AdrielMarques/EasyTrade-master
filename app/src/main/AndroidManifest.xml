@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.interaje.easytrade" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".activites.Login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activites.MainActivity" >
+        </activity>
+        <activity
+            android:name=".activites.ListProduto"
+            android:label="@string/title_activity_list_produto"
+            android:parentActivityName=".activites.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="br.com.interaje.easytrade.activites.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activites.AddProduto"
+            android:parentActivityName=".activites.ListProduto" >
+        </activity>
+        <activity
+            android:name=".CadastroCliente"
+            android:label="@string/title_activity_cadastro_cliente"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".list_cliente"
+            android:label="@string/title_activity_list_cliente"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".item_list_cliente"
+            android:label="@string/title_activity_item_list_cliente"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+    </application>
+
+</manifest>
