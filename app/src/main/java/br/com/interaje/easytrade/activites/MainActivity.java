@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 import br.com.interaje.easytrade.R;
 import br.com.interaje.easytrade.adapter.MainActivityAdapter;
-import br.com.interaje.easytrade.list_cliente;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 1:
-                        startActivity(new Intent(MainActivity.this, list_cliente.class));
+                        startActivity(new Intent(MainActivity.this, ListCliente.class));
                         break;
                 }
 

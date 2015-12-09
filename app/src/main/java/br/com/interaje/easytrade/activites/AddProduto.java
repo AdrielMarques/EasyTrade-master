@@ -2,7 +2,6 @@ package br.com.interaje.easytrade.activites;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,13 +9,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 
 import br.com.interaje.easytrade.R;
-import br.com.interaje.easytrade.database.Database;
+import br.com.interaje.easytrade.database.ProdutoDatabase;
 import br.com.interaje.easytrade.database.ProdutoDatabaseHelper;
 import br.com.interaje.easytrade.model.Produto;
 import br.com.interaje.easytrade.repositories.ProdutoDAO;
@@ -117,10 +115,10 @@ public class AddProduto extends AppCompatActivity implements View.OnClickListene
     }
 
     private boolean salvarProduto(Produto produto) {
-        Database database = new Database(new ProdutoDatabaseHelper(this));
+        ProdutoDatabase produtoDatabase = new ProdutoDatabase(new ProdutoDatabaseHelper(this));
         ProdutoDAO dao = new ProdutoDAOImpl();
 
-        return dao.salvar(produto, database);
+        return dao.salvar(produto, produtoDatabase);
     }
 
     @Override

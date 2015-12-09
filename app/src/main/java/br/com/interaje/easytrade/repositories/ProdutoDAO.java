@@ -4,7 +4,7 @@ import android.content.Context;
 
 import java.util.List;
 
-import br.com.interaje.easytrade.database.Database;
+import br.com.interaje.easytrade.database.ProdutoDatabase;
 import br.com.interaje.easytrade.model.Produto;
 
 /**
@@ -12,9 +12,10 @@ import br.com.interaje.easytrade.model.Produto;
  */
 public interface ProdutoDAO {
 
-    boolean salvar(Produto produto, Database database);
+    boolean salvar(Produto produto, ProdutoDatabase produtoDatabase);
 
-    List<Produto> findAll(Context context, Database database);
+    List<Produto> findAll(Context context, ProdutoDatabase produtoDatabase);
 
-    void remove(Long id, Context context, Database database);
+    void remove(Long id, Context context, ProdutoDatabase produtoDatabase);
+
 }

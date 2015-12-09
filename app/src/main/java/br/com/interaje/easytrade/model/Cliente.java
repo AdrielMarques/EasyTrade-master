@@ -7,6 +7,7 @@ public class Cliente {
     private String nome_Cliente;
     private String email;
     private String telefone;
+    private Long id;
 
     public String getNome_Cliente() {
         return nome_Cliente;
@@ -30,5 +31,13 @@ public class Cliente {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

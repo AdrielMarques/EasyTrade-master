@@ -3,19 +3,17 @@ package br.com.interaje.easytrade.activites;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.List;
 
 import br.com.interaje.easytrade.R;
 import br.com.interaje.easytrade.adapter.ProdutoAdapter;
-import br.com.interaje.easytrade.database.Database;
+import br.com.interaje.easytrade.database.ProdutoDatabase;
 import br.com.interaje.easytrade.database.ProdutoDatabaseHelper;
 import br.com.interaje.easytrade.model.Produto;
 import br.com.interaje.easytrade.repositories.ProdutoDAO;
@@ -81,10 +79,10 @@ public class ListProduto extends AppCompatActivity implements View.OnClickListen
     }
 
     public List<Produto> getLista() {
-        Database database = new Database(new ProdutoDatabaseHelper(this));
+        ProdutoDatabase produtoDatabase = new ProdutoDatabase(new ProdutoDatabaseHelper(this));
         ProdutoDAO dao = new ProdutoDAOImpl();
 
-        return dao.findAll(this, database);
+        return dao.findAll(this, produtoDatabase);
     }
 
 

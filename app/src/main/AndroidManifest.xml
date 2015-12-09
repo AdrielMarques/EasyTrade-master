@@ -30,17 +30,17 @@
             android:parentActivityName=".activites.ListProduto" >
         </activity>
         <activity
-            android:name=".CadastroCliente"
+            android:name=".activites.CadastroCliente"
             android:label="@string/title_activity_cadastro_cliente"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".list_cliente"
+            android:name=".activites.ListCliente"
             android:label="@string/title_activity_list_cliente"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
-            android:name=".item_list_cliente"
+            android:name=".activites.ItemListCliente"
             android:label="@string/title_activity_item_list_cliente"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>

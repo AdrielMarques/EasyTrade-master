@@ -1,4 +1,4 @@
-package br.com.interaje.easytrade;
+package br.com.interaje.easytrade.activites;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,7 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class item_list_cliente extends AppCompatActivity {
+import br.com.interaje.easytrade.R;
+
+public class ItemListCliente extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

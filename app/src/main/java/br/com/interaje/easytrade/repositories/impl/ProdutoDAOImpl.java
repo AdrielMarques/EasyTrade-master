@@ -7,7 +7,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import br.com.interaje.easytrade.database.Database;
+import br.com.interaje.easytrade.database.ProdutoDatabase;
 import br.com.interaje.easytrade.database.ProdutoDatabaseHelper;
 import br.com.interaje.easytrade.model.Produto;
 import br.com.interaje.easytrade.repositories.ProdutoDAO;
@@ -22,9 +22,9 @@ public class ProdutoDAOImpl implements ProdutoDAO {
      * Inserir
      */
     @Override
-    public boolean salvar(Produto produto, Database database) {
+    public boolean salvar(Produto produto, ProdutoDatabase produtoDatabase) {
         ContentValues cv = new ContentValues();
-        database.open();
+        produtoDatabase.open();
         try {
             if (produto != null) {
                 cv.put(ProdutoDatabaseHelper.COLUMN_NOME, produto.getNome());
@@ -34,9 +34,9 @@ public class ProdutoDAOImpl implements ProdutoDAO {
                 cv.put(ProdutoDatabaseHelper.COLUMN_FOTO, produto.getFoto());
 
                 if(produto.getId() == 0l) {
-                    database.get().insert(tableDAO, null, cv);
+                    produtoDatabase.get().insert(tableDAO, null, cv);
                 }else {
-                    database.get().update(tableDAO, cv, "_id=?", new String[]{String.valueOf(produto.getId())});
+                    produtoDatabase.get().update(tableDAO, cv, "_id=?", new String[]{String.valueOf(produto.getId())});
                 }
             }
         } catch (Exception e) {
@@ -44,11 +44,11 @@ public class ProdutoDAOImpl implements ProdutoDAO {
                     "Method: salvar().\nErro ao inserir dados do banco. Causa: "
                             + e.getCause());
 
-            database.close();
+            produtoDatabase.close();
             return false;
         }
 
-        database.close();
+        produtoDatabase.close();
         return true;
 
     }
@@ -57,12 +57,12 @@ public class ProdutoDAOImpl implements ProdutoDAO {
      * Listar todos
      */
     @Override
-    public ArrayList<Produto> findAll(Context context, Database database) {
+    public ArrayList<Produto> findAll(Context context, ProdutoDatabase produtoDatabase) {
         Cursor cursor = null;
-        database.open();
+        produtoDatabase.open();
 
         try {
-            cursor = database.get().rawQuery("select * from "+tableDAO+" order by nome", null);
+            cursor = produtoDatabase.get().rawQuery("select * from "+tableDAO+" order by nome", null);
         } catch (Exception e) {
 
             Log.d("CarDAOImpl",
@@ -92,7 +92,7 @@ public class ProdutoDAOImpl implements ProdutoDAO {
             cursor.close();
         }
 
-        database.close();
+        produtoDatabase.close();
         return listEntity;
     }
 
@@ -100,18 +100,18 @@ public class ProdutoDAOImpl implements ProdutoDAO {
      * Remover
      */
     @Override
-    public void remove(Long id, Context context, Database database) {
+    public void remove(Long id, Context context, ProdutoDatabase produtoDatabase) {
         try {
-            database.open();
+            produtoDatabase.open();
             // (TABELA, COLUNA, WHERE CLAUSE)
-            database.get().delete(tableDAO, "id",
+            produtoDatabase.get().delete(tableDAO, "id",
                     new String[]{String.valueOf(id)});
         } catch (Exception e) {
             Log.d("ProdutoDAOImpl",
                     "Method: remove().\nErro ao remover dados do banco. Causa: "
                             + e.getMessage());
         } finally {
-            database.close();
+            produtoDatabase.close();
         }
     }
 

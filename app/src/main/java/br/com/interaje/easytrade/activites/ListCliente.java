@@ -1,4 +1,4 @@
-package br.com.interaje.easytrade;
+package br.com.interaje.easytrade.activites;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,11 +9,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import br.com.interaje.easytrade.activites.AddProduto;
+import br.com.interaje.easytrade.R;
 import br.com.interaje.easytrade.adapter.ClienteAdapter;
 import br.com.interaje.easytrade.model.Cliente;
 
-public class list_cliente extends AppCompatActivity {
+public class ListCliente extends AppCompatActivity {
 
     private ListView listCliente;
     private ClienteAdapter adapter;
@@ -30,7 +30,7 @@ public class list_cliente extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(list_cliente.this, CadastroCliente.class));
+                startActivity(new Intent(ListCliente.this, CadastroCliente.class));
             }
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -51,7 +51,7 @@ public class list_cliente extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(list_cliente.this, AddProduto.class);
+                Intent intent = new Intent(ListCliente.this, AddProduto.class);
                 Cliente cliente= (Cliente) adapter.getItem(position);
 
 
