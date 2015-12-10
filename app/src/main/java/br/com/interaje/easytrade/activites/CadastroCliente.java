@@ -97,14 +97,7 @@ public class CadastroCliente extends AppCompatActivity implements View.OnClickLi
                     Toast.makeText(this, "Nome, valor, quantidade e foto são obrigatórios! Informe-os.", Toast.LENGTH_SHORT).show();
 
                 }
-
-
-
-
-
-
-
-
+                
 
                 break;
         }
