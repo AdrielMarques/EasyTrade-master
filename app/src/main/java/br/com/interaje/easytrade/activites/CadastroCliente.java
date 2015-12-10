@@ -98,6 +98,9 @@ public class CadastroCliente extends AppCompatActivity implements View.OnClickLi
 
                 }
 
+
+
+
                 break;
         }
 
